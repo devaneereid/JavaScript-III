@@ -10,22 +10,36 @@
 */
 
 // Principle 1
-let user = {
+const user = {
     sayName: 'Joe',
-    sayHi() {
-        alert('Hello, my name is ${this.sayName}!');
+    sayHi: function(){
+        return 'Hello, my name is ${this.sayName}!';
     }
-};
-console.log(user.sayName);
+}
+
+console.log(user.sayHi());
 
 // code example for Window Binding
 
 // Principle 2
-
+let myDog = {
+    name: 'Tessa',
+    sound: 'Wooof!',
+    dog: function(){
+        console.log(this.sound);
+    }
+}
+myDog.dog();
 
 // code example for Implicit Binding
 
 // Principle 3
+function cat(saying){
+    this.thing = saying;
+}
+let myCat = new cat('Tiger is a nice kitty!');
+
+console.log(myCat.thing);
 
 // code example for New Binding
 
@@ -34,7 +48,7 @@ const car = {
     make: 'Ford',
     model: 'Focus',
     details: function(){
-    return `here is your new ${this.make}, ${this.model}!`;
+    return `Here is your new ${this.make}, ${this.model}!`;
 }
 }
 console.log(car.details());
