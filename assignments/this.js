@@ -37,7 +37,7 @@ function Person(obj) {
         console.log(`Hello, my name is ${this.name}, and I am ${this.age} years old!`);
     }
 }
-const jenna = new Person({name:'Jenna', age: 35});
+const jenna = new Person({name:'Jenna', age: 20});
 jenna.speak();
 
 // Principle 4
